@@ -1,0 +1,141 @@
+:root {
+  --bg-dark: #1f1f1f;
+  --bg-light: #2a2a2a;
+  --primary-color: #007bff;
+  --accent-color: #007bff; /* Use primary blue for accent */
+  --text-light: #ffffff;
+  --border-radius: 10px;
+  --low-color: #6c757d;
+  --high-color: #6c757d;
+}
+
+/* Parameters Grid Layout */
+.parameters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  background-color: var(--bg-dark);
+  border-radius: var(--border-radius);
+}
+
+/* Parameter Tile Styling */
+.parameter-tile {
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  text-align: center;
+  color: var(--text-light);
+  user-select: none;
+}
+
+.parameter-tile:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.parameter-tile.selected {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.parameter-tile.out-of-range {
+  background-color: var(--high-color);
+  box-shadow: 0 0 0 2px var(--high-color);
+}
+
+/* Parameter Header Styling */
+.parameter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.param-name {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.info-icon {
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 1.4em;
+  transition: color 0.3s ease;
+}
+
+.info-icon:hover {
+  color: var(--text-light);
+}
+
+/* Parameter Value Styling */
+.parameter-value {
+  font-size: 2.6em;
+  font-weight: 700;
+  color: var(--text-light);
+  margin: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.unit {
+  font-size: 0.6em;
+  margin-left: 5px;
+  color: var(--text-light);
+}
+
+/* Alarm Set Information Styling */
+.alarm-set {
+  font-size: 1em;
+  color: var(--text-light);
+  background-color: #343a40;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.alarm-set .label {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.alarm-set .low-high-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.alarm-set .low, .alarm-set .high {
+  width: 45%;
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.separator {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .parameters-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 10px;
+  }
+  
+  .parameter-value {
+    font-size: 2em;
+  }
+}

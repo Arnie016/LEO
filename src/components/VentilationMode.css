@@ -1,0 +1,190 @@
+.ventilation-mode {
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  align-items: center; /* Center the button vertically */
+}
+
+.expand-button {
+  background-color: #3498db; /* Blue color for the button */
+  color: #ecf0f1; /* Light text color */
+  padding: 15px 30px; /* Adjusted padding for larger button */
+  border: none;
+  border-radius: 12px; /* Slightly rounded corners */
+  font-size: 1.5rem; /* Increased font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%; /* Make the button full width */
+  max-width: 300px; /* Limit the maximum width */
+  text-align: center; /* Center the text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add some shadow */
+}
+
+.expand-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.expand-button:active {
+  background-color: #1e6f9f; /* Even darker blue when clicked */
+  transform: scale(0.98); /* Slightly shrink the button on click */
+}
+
+.mode-buttons {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Single column layout */
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+  grid-auto-rows: 1fr; /* Equal height rows */
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.mode-button {
+  background-color: #2c3e50;
+  border: none;
+  border-radius: 10px;
+  padding: 10px; /* Reduced padding for smaller size */
+  color: #ecf0f1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.25rem; /* Increased text size */
+  width: 90%; /* Slightly reduced button width */
+  height: 90%; /* Slightly reduced button height */
+  margin: 0 auto; /* Center the button */
+}
+
+.mode-button:hover {
+  background-color: #34495e;
+  transform: translateY(-3px);
+}
+
+.mode-button.active {
+  background-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  transform: scale(1.05);
+}
+
+.mode-button svg {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.mode-details {
+  background-color: #2c3e50;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-out;
+  color: #ecf0f1;
+  line-height: 1.6;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mode-details h3 {
+  color: #3498db;
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.mode-details p {
+  color: #ecf0f1;
+  line-height: 1.6;
+}
+
+.enable-button, .back-button {
+  background-color: #3498db;
+  color: #ecf0f1;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.enable-button:hover, .back-button:hover {
+  background-color: #2980b9;
+}
+
+.enable-button.enabled {
+  background-color: #28a745; /* Green background when enabled */
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.right-panel .control-button {
+  width: 100%;
+  max-width: 150px;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-panel .control-button.mute-alarm {
+  background-color: #e74c3c;
+}
+
+.right-panel .control-button.mute-alarm.muted {
+  background-color: #c0392b;
+}
+
+.right-panel .control-button:hover {
+  background-color: #2980b9;
+}
+
+.right-panel .control-button.mute-alarm:hover {
+  background-color: #c0392b;
+}
+
+.big-button {
+  width: 100%;
+  max-width: 150px;
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 1.25rem;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.big-button:hover {
+  background-color: #2980b9;
+}

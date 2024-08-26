@@ -1,0 +1,40 @@
+.control-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.control-buttons-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.control-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.control-button:hover {
+  background-color: #0056b3;
+}
+
+.mute-alarm {
+  background-color: #dc3545;
+}
+
+.mute-alarm.muted {
+  background-color: #28a745;
+}
+
+.mute-alarm:hover {
+  background-color: #c82333;
+}

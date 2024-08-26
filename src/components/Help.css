@@ -1,0 +1,67 @@
+/* Help Page styling */
+.help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: #2c3e50; /* Darker background color */
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    color: #ecf0f1; /* Light text color for contrast */
+  }
+  
+  .help h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #ecf0f1;
+    font-weight: bold;
+  }
+  
+  .help-sections {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .help-sections section {
+    background: #34495e; /* Slightly lighter background for sections */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Darker shadow for depth */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .help-sections h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+  }
+  
+  .help-sections p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #bdc3c7; /* Slightly lighter text for description */
+  }
+  
+  .help-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    color: #ecf0f1;
+    background: #2980b9; /* Bright button background */
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .help-link:hover {
+    background: #3498db; /* Lighter blue on hover */
+    color: #fff;
+  }
+  
+  .help-link:focus {
+    outline: 2px solid #3498db; /* Focus outline for accessibility */
+    outline-offset: 2px;
+  }
+  
