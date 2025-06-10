@@ -77,11 +77,37 @@ function AppContent() {
   const handleIncrement = useCallback(() => {
     if (selectedParameter) {
       setTempParameters((prev) => {
-        const newValue = Math.min(prev[selectedParameter].value + 1, prev[selectedParameter].high);
-        return {
-          ...prev,
-          [selectedParameter]: { ...prev[selectedParameter], value: newValue },
-        };
+        const param = prev[selectedParameter];
+        const { value, high } = param;
+
+        // Only perform arithmetic if the current value is a number
+        if (typeof value === 'number') {
+          const upper = typeof high === 'number' ? high : value + 1;
+          const newValue = Math.min(value + 1, upper);
+          return {
+            ...prev,
+            [selectedParameter]: { ...param, value: newValue },
+          };
+        }
+
+        // Handle object values like IE ratio
+        if (value && typeof value === 'object') {
+          if (
+            Object.prototype.hasOwnProperty.call(value, 'inhalation') &&
+            Object.prototype.hasOwnProperty.call(value, 'exhalation')
+          ) {
+            return {
+              ...prev,
+              [selectedParameter]: {
+                ...param,
+                value: { ...value, inhalation: value.inhalation + 1 },
+              },
+            };
+          }
+        }
+
+        // Skip update for unsupported value types
+        return prev;
       });
     }
   }, [selectedParameter]);
@@ -89,11 +115,37 @@ function AppContent() {
   const handleDecrement = useCallback(() => {
     if (selectedParameter) {
       setTempParameters((prev) => {
-        const newValue = Math.max(prev[selectedParameter].value - 1, prev[selectedParameter].low);
-        return {
-          ...prev,
-          [selectedParameter]: { ...prev[selectedParameter], value: newValue },
-        };
+        const param = prev[selectedParameter];
+        const { value, low } = param;
+
+        if (typeof value === 'number') {
+          const lower = typeof low === 'number' ? low : value - 1;
+          const newValue = Math.max(value - 1, lower);
+          return {
+            ...prev,
+            [selectedParameter]: { ...param, value: newValue },
+          };
+        }
+
+        if (value && typeof value === 'object') {
+          if (
+            Object.prototype.hasOwnProperty.call(value, 'inhalation') &&
+            Object.prototype.hasOwnProperty.call(value, 'exhalation')
+          ) {
+            return {
+              ...prev,
+              [selectedParameter]: {
+                ...param,
+                value: {
+                  ...value,
+                  exhalation: Math.max(1, value.exhalation - 1),
+                },
+              },
+            };
+          }
+        }
+
+        return prev;
       });
     }
   }, [selectedParameter]);
