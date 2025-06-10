@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+
+# Environment variables
+.env
+.env.*
+
+# SSL certs
+server.key
+server.csr
+
+# package lock file (ignored)
+package-lock.json
+
+# Mac and others
+.DS_Store
+

@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Ventilator UI
+A simple React interface for exploring ventilator modes and AI-generated recommendations.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Setup
+
+1. Install dependencies with `npm install`.
+2. Create a `.env` file and set `REACT_APP_OPENAI_API_KEY=<your key>`.
 
 ## Available Scripts
 
