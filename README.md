@@ -39,6 +39,19 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Configuration
+
+Before running the application you must provide an OpenAI API key so the AI recommendation feature can connect to the API.
+
+1. Create a file named `.env` in the project root.
+2. Add your key in the following format:
+
+```
+REACT_APP_OPENAI_API_KEY=your-api-key
+```
+
+You can also export `REACT_APP_OPENAI_API_KEY` in your shell environment. After setting the key, run `npm start` as described above.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
