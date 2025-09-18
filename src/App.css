@@ -68,6 +68,15 @@ nav {
   display: flex;
   justify-content: flex-end; /* Ensure content is aligned to the right */
   width: 100%;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 10px;
+}
+
+.spacer {
+  flex: 1;
 }
 
 .enabled-modes-container {
