@@ -1,8 +1,24 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+class MockBroadcastChannel {
+  constructor() {}
+  postMessage() {}
+  close() {}
+  addEventListener() {}
+  removeEventListener() {}
+}
+
+beforeAll(() => {
+  global.BroadcastChannel = MockBroadcastChannel;
+});
+
+afterAll(() => {
+  delete global.BroadcastChannel;
+});
+
+test('renders application header', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const heading = screen.getByRole('heading', { name: /ventilator management system/i });
+  expect(heading).toBeInTheDocument();
 });

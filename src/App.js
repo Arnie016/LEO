@@ -8,6 +8,7 @@ import Options from './components/Options';
 import Help from './components/Help';
 import GraphPage from './components/GraphPage';
 import ParameterModal from './components/ParameterModal';
+import SoapNoteTranscriber from './components/SoapNoteTranscriber';
 import { FaArrowUp, FaArrowDown, FaInfoCircle } from 'react-icons/fa';
 
 const initialParameters = {
@@ -160,6 +161,7 @@ function AppContent() {
             <Link key={index} to="/" className="enabled-mode">{mode}</Link>
           ))}
           <div className="spacer"></div>
+          <Link to="/soap-transcriber" className="nav-link">Dental SOAP Bot</Link>
           <button onClick={handleViewGraphClick}>View Graph</button>
         </nav>
       </header>
@@ -244,6 +246,7 @@ function AppContent() {
         <Route path="/help" element={<Help />} />
         <Route path="/options" element={<Options />} />
         <Route path="/graph" element={<GraphPage parameters={parameters} />} />
+        <Route path="/soap-transcriber" element={<SoapNoteTranscriber />} />
       </Routes>
       {modalParam && (
         <ParameterModal 
